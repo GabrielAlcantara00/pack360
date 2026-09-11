@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-orange: #ff6b00;
+  --color-brand-orange-hover: #e56000;
+  --color-brand-emerald: #059669;
+  --color-brand-emerald-hover: #047857;
+  
+  --color-dark-deep: #050505;
+  --color-dark-charcoal: #121212;
+  --color-dark-graphite: #1e1e1e;
+  --color-dark-border: #2e2e2e;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: var(--color-dark-deep);
+  --foreground: var(--color-text-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Custom Utilities for Hide Scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Wistia Official Web Component Styles */
+wistia-player[media-id='i8f96hvfl0']:not(:defined) {
+  background:
+    center / contain no-repeat
+    url('https://fast.wistia.com/embed/medias/i8f96hvfl0/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
+
+wistia-player[media-id='ycrh2prutg']:not(:defined) {
+  background:
+    center / contain no-repeat
+    url('https://fast.wistia.com/embed/medias/ycrh2prutg/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 56.25%;
+}
+
+wistia-player[media-id='8zkovwv72p']:not(:defined) {
+  background:
+    center / contain no-repeat
+    url('https://fast.wistia.com/embed/medias/8zkovwv72p/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
+
+wistia-player[media-id='ue14m4ktc9']:not(:defined) {
+  background:
+    center / contain no-repeat
+    url('https://fast.wistia.com/embed/medias/ue14m4ktc9/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
+
+wistia-player[media-id='8zuebms4ok']:not(:defined) {
+  background:
+    center / contain no-repeat
+    url('https://fast.wistia.com/embed/medias/8zuebms4ok/swatch');
+  display: block;
+  filter: blur(5px);
+  padding-top: 177.78%;
+}
