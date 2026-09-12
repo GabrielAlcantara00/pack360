@@ -9,10 +9,12 @@ const compatibility = ["LIGHTBURN", "LASERGRBL", "GRAVAÇÃO 360°", "ACESSÓRIO
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-[var(--color-dark-deep)] text-[var(--color-text-primary)]">
-      <div className="w-full h-9 bg-[var(--color-dark-charcoal)] flex items-center justify-center px-4 text-xs font-bold uppercase tracking-wider text-[var(--color-text-primary)] relative z-10 border-b border-[var(--color-dark-border)]">
+      <div className="w-full min-h-[48px] bg-[var(--color-dark-charcoal)] flex items-center justify-center px-3 py-2.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.08em] sm:tracking-wider text-[var(--color-text-primary)] relative z-10 border-b border-[var(--color-dark-border)]">
         <Zap className="w-3.5 h-3.5 text-[var(--color-brand-orange)] mr-2 flex-shrink-0 fill-current" />
-        <span className="text-center">
-          BIBLIOTECA DE ARTES 360° PARA QUEM JÁ TEM LASER <span className="hidden sm:inline">·</span><br className="sm:hidden" /> PAGAMENTO ÚNICO · ACESSO DIGITAL
+        <span className="text-center leading-[1.35] sm:leading-normal">
+          <span className="block sm:inline">BIBLIOTECA DE ARTES 360° PARA QUEM JÁ TEM LASER</span>
+          <span className="hidden sm:inline"> · </span>
+          <span className="block sm:inline">PAGAMENTO ÚNICO · ACESSO DIGITAL</span>
         </span>
       </div>
 
@@ -20,9 +22,9 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-8 items-center">
           <StaggerContainer className="order-1 lg:col-start-1 lg:row-start-1 space-y-5 md:space-y-6 text-center lg:text-left">
             <StaggerItem>
-              <div className="inline-flex items-center space-x-2 bg-[var(--color-dark-graphite)] border border-[var(--color-dark-border)] rounded-full px-4 py-1.5">
+              <div className="inline-flex max-w-full items-center justify-center gap-2 bg-[var(--color-dark-graphite)] border border-[var(--color-dark-border)] rounded-full px-3 sm:px-4 py-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-brand-orange)] flex-shrink-0 shadow-[0_0_8px_var(--color-brand-orange)]" />
-                <span className="text-sm font-bold uppercase tracking-wider text-[var(--color-text-secondary)]">
+                <span className="text-[10px] sm:text-sm leading-[1.25] font-bold uppercase tracking-[0.08em] sm:tracking-wider text-center text-[var(--color-text-secondary)]">
                   {siteConfig.descriptor}
                 </span>
               </div>
