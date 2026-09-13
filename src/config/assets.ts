@@ -41,6 +41,6 @@ export const assets = {
 
 // Coloque os links reais da nova oferta antes de publicar.
 export const CHECKOUT_URLS = {
-  pro: "#planos",
-  starter: "#planos",
+  pro: "https://ggcheckout.app/checkout/v5/mE5or2yp85g1cvgOYLJD",
+  starter: "https://ggcheckout.app/checkout/v5/wdcLDT15r5lPiC0Nz2U1",
 };
