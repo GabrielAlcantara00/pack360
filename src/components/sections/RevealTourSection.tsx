@@ -1,11 +1,18 @@
+import Script from "next/script";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { assets } from "@/config/assets";
 import { Package, Search, MonitorPlay } from "lucide-react";
 
 export function RevealTourSection() {
   return (
     <section className="py-10 md:py-16 bg-[#000000] relative overflow-hidden border-b border-[var(--color-dark-border)]">
+      <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
+      <Script
+        src="https://fast.wistia.com/embed/hkifs7oe9q.js"
+        type="module"
+        strategy="afterInteractive"
+      />
+
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-3xl h-[50%] bg-[var(--color-brand-orange)]/15 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -19,10 +26,15 @@ export function RevealTourSection() {
         </FadeIn>
 
         <div className="flex flex-col md:flex-row gap-6 items-center">
-          <div className="w-full md:w-1/2 relative rounded-xl overflow-hidden border border-[var(--color-dark-border)] bg-[var(--color-dark-charcoal)] shadow-xl group">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={assets.hero.image} alt="Biblioteca Pack 360 Pro organizada por temas" className="w-full h-auto object-cover" loading="lazy" />
-          </div>
+          <FadeIn className="w-full md:w-1/2">
+            <div className="relative w-full overflow-hidden rounded-xl border border-[var(--color-dark-border)] bg-[var(--color-dark-charcoal)] shadow-xl">
+              <wistia-player
+                media-id="hkifs7oe9q"
+                aspect="1.7777777777777777"
+                style={{ display: "block", width: "100%" }}
+              />
+            </div>
+          </FadeIn>
 
           <FadeIn className="w-full md:w-1/2 space-y-3 md:space-y-4">
             <div className="bg-[var(--color-dark-charcoal)] border border-[var(--color-dark-border)] p-4 rounded-xl flex items-center space-x-4">
