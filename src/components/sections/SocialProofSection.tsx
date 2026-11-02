@@ -21,8 +21,8 @@ export function SocialProofSection() {
       </div>
 
       <div className="w-full space-y-4 md:space-y-6 mb-10">
-        <InfiniteCarousel items={firstRow} direction="left" speed="normal" />
-        <InfiniteCarousel items={secondRow} direction="right" speed="slow" />
+        <InfiniteCarousel items={firstRow} direction="left" speed="fast" />
+        <InfiniteCarousel items={secondRow} direction="right" speed="fast" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4">
