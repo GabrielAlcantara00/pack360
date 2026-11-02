@@ -48,48 +48,48 @@ body {
     scrollbar-width: none;
 }
 
-/* Wistia Official Web Component Styles */
-wistia-player[media-id='i8f96hvfl0']:not(:defined) {
-  background:
-    center / contain no-repeat
-    url('https://fast.wistia.com/embed/medias/i8f96hvfl0/swatch');
-  display: block;
-  filter: blur(5px);
-  padding-top: 177.78%;
+
+/* Performance: render abaixo da dobra somente quando necessário */
+main > section:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 820px;
 }
 
-wistia-player[media-id='ycrh2prutg']:not(:defined) {
-  background:
-    center / contain no-repeat
-    url('https://fast.wistia.com/embed/medias/ycrh2prutg/swatch');
-  display: block;
-  filter: blur(5px);
-  padding-top: 56.25%;
+/* CSS-only motion: substitui Framer Motion no conteúdo estático */
+.perf-fade { opacity: 1; transform: none; }
+
+.carousel-track {
+  --carousel-duration: 40s;
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  align-items: center;
+  will-change: transform;
+  animation-duration: var(--carousel-duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.carousel-track-left { animation-name: carousel-left; }
+.carousel-track-right { animation-name: carousel-right; }
+.carousel-shell:hover .carousel-track { animation-play-state: paused; }
+@keyframes carousel-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes carousel-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+.sticky-cta-enter { animation: sticky-cta-in .2s ease-out both; }
+.popup-backdrop { animation: popup-fade .16s ease-out both; }
+.popup-panel { animation: popup-in .2s ease-out both; }
+@keyframes sticky-cta-in { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes popup-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popup-in { from { transform: translateY(12px) scale(.98); opacity: 0; } to { transform: none; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track,
+  .sticky-cta-enter,
+  .popup-backdrop,
+  .popup-panel { animation: none !important; }
+  .accordion-content { transition: none; }
 }
 
-wistia-player[media-id='8zkovwv72p']:not(:defined) {
-  background:
-    center / contain no-repeat
-    url('https://fast.wistia.com/embed/medias/8zkovwv72p/swatch');
-  display: block;
-  filter: blur(5px);
-  padding-top: 177.78%;
-}
-
-wistia-player[media-id='ue14m4ktc9']:not(:defined) {
-  background:
-    center / contain no-repeat
-    url('https://fast.wistia.com/embed/medias/ue14m4ktc9/swatch');
-  display: block;
-  filter: blur(5px);
-  padding-top: 177.78%;
-}
-
-wistia-player[media-id='8zuebms4ok']:not(:defined) {
-  background:
-    center / contain no-repeat
-    url('https://fast.wistia.com/embed/medias/8zuebms4ok/swatch');
-  display: block;
-  filter: blur(5px);
-  padding-top: 177.78%;
-}
+@keyframes marquee-hero { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee-hero { display:flex; width:max-content; animation: marquee-hero 20s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .animate-marquee-hero { animation: none; } }

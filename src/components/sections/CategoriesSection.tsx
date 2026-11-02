@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { assets } from "@/config/assets";
@@ -29,8 +30,7 @@ export function CategoriesSection() {
             <StaggerItem key={i}>
               <div className="bg-[var(--color-dark-deep)] border border-[var(--color-dark-border)] rounded-xl overflow-hidden group">
                 <div className="aspect-square w-full relative bg-[var(--color-dark-graphite)] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <Image src={item.img} alt={item.title} fill sizes="(max-width: 768px) 50vw, 33vw" quality={72} className="object-cover group-hover:scale-105 transition-transform duration-300" />
                   <div className="absolute top-2 left-2 bg-[var(--color-brand-orange)] text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">
                     {item.title}
                   </div>

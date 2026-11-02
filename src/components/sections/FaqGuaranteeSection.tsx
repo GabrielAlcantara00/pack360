@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Accordion } from "@/components/ui/Accordion";
 import { assets } from "@/config/assets";
@@ -19,8 +20,7 @@ export function FaqGuaranteeSection() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="flex items-center justify-center gap-4 md:gap-6 bg-[var(--color-dark-graphite)] border border-[var(--color-dark-border)] rounded-xl p-4 shadow-lg">
             <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={assets.guarantee.badge} alt="Garantia de 7 dias" className="w-full h-full object-contain" />
+              <Image src={assets.guarantee.badge} alt="Garantia de 7 dias" width={160} height={160} sizes="80px" quality={72} className="w-full h-full object-contain" />
             </div>
             <div>
               <h2 className="text-lg md:text-xl font-black text-white uppercase tracking-tight leading-tight">7 dias de garantia</h2>

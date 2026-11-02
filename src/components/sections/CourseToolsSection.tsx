@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { assets } from "@/config/assets";
 
@@ -7,6 +8,8 @@ export function CourseToolsSection() {
       title: "Curso 360 do Zero",
       icon: "🎓",
       img: assets.courseTools.course,
+      width: 900,
+      height: 675,
       bullets: [
         "LightBurn + LaserGRBL",
         "Do arquivo à preparação da gravação",
@@ -17,6 +20,8 @@ export function CourseToolsSection() {
       title: "Planilha de Precificação 360",
       icon: "🧮",
       img: assets.courseTools.calculator,
+      width: 900,
+      height: 600,
       bullets: [
         "Organize os custos do copo e da produção",
         "Defina sua margem de lucro",
@@ -27,6 +32,8 @@ export function CourseToolsSection() {
       title: "Guia Rápido de Vendas",
       icon: "📈",
       img: assets.courseTools.guide,
+      width: 900,
+      height: 600,
       bullets: [
         "Como apresentar seus produtos",
         "WhatsApp + Instagram",
@@ -52,8 +59,7 @@ export function CourseToolsSection() {
             <StaggerItem key={i}>
               <div className="bg-[var(--color-dark-graphite)] border border-[var(--color-dark-border)] rounded-xl overflow-hidden flex flex-col h-full">
                 <div className="w-full relative bg-[var(--color-dark-deep)] border-b border-[var(--color-dark-border)] sm:aspect-[16/9]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={tool.img} alt={tool.title} className="w-full h-auto object-contain sm:h-full sm:object-cover" loading="lazy" />
+                  <Image src={tool.img} alt={tool.title} width={tool.width} height={tool.height} sizes="(max-width: 640px) 100vw, 33vw" quality={72} className="w-full h-auto object-contain sm:h-full sm:object-cover" />
                 </div>
                 <div className="p-4 flex flex-col flex-grow">
                   <h3 className="font-bold text-white text-base md:text-lg mb-3 flex items-center">

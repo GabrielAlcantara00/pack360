@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { siteConfig } from "@/config/site";
@@ -40,10 +41,15 @@ export function HeroSection() {
           <div className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end w-full relative self-center py-2 sm:py-4">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[78%] h-[68%] bg-[var(--color-brand-orange)]/20 blur-[95px] rounded-full pointer-events-none" />
             <div className="w-full max-w-[430px] mx-auto lg:max-w-xl relative z-10">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={assets.hero.image}
                 alt="Pack 360 Pro com biblioteca de artes 360 graus para copos"
+                width={960}
+                height={720}
+                priority
+                fetchPriority="high"
+                quality={78}
+                sizes="(max-width: 1024px) calc(100vw - 32px), 50vw"
                 className="w-full h-auto object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
               />
             </div>
@@ -84,8 +90,7 @@ export function HeroSection() {
                 <div className="flex -space-x-2">
                   {[assets.socialProof.whatsapp[0], assets.socialProof.whatsapp[1], assets.socialProof.whatsapp[2]].map((src, i) => (
                     <div key={i} className="w-8 h-8 rounded-full bg-gray-600 border-2 border-[var(--color-dark-deep)] overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="Feedback real" className="w-full h-full object-cover" />
+                      <Image src={src} alt="Feedback real" width={32} height={32} sizes="32px" className="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>
@@ -103,10 +108,6 @@ export function HeroSection() {
                 <h3 className="text-lg md:text-xl font-black uppercase tracking-tight text-white mb-6">
                   Pensado para o fluxo de gravação a laser
                 </h3>
-                <style dangerouslySetInnerHTML={{ __html: `
-                  @keyframes marquee-hero { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-                  .animate-marquee-hero { display: flex; width: max-content; animation: marquee-hero 20s linear infinite; }
-                `}} />
                 <div className="relative w-full flex overflow-hidden group">
                   <div className="animate-marquee-hero items-center gap-4 pr-4">
                     {[...compatibility, ...compatibility].map((item, i) => (

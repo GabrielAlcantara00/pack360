@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { assets } from "@/config/assets";
 
@@ -25,8 +26,7 @@ export function BonusSection() {
             <StaggerItem key={i}>
               <div className="bg-[var(--color-dark-charcoal)] border border-[var(--color-dark-border)] rounded-xl overflow-hidden flex flex-col h-full">
                 <div className="aspect-[4/3] w-full relative bg-[var(--color-dark-graphite)]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={bonus.img} alt={bonus.title} className="w-full h-full object-cover" loading="lazy" />
+                  <Image src={bonus.img} alt={bonus.title} fill sizes="(max-width: 640px) 100vw, 33vw" quality={72} className="object-cover" />
                 </div>
                 <div className="p-3 flex flex-col flex-grow text-center">
                   <h3 className="text-sm md:text-base font-bold text-white mb-1">{bonus.title}</h3>

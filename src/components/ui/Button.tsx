@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { ButtonHTMLAttributes, cloneElement, forwardRef, isValidElement, ReactElement } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "emerald";
@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "emerald", size = "default", ...props }, ref) => {
+  ({ className, variant = "emerald", size = "default", asChild = false, children, ...props }, ref) => {
     const baseStyles =
       "inline-flex items-center justify-center rounded-md font-bold uppercase tracking-wide transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 font-display";
 
@@ -25,12 +25,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       xl: "h-16 px-10 text-lg sm:text-xl",
     };
 
+    const mergedClassName = cn(baseStyles, variants[variant], sizes[size], className);
+
+    if (asChild && isValidElement(children)) {
+      const child = children as ReactElement<{ className?: string }>;
+      return cloneElement(child, {
+        className: cn(mergedClassName, child.props.className),
+      });
+    }
+
     return (
-      <button
-        ref={ref}
-        className={cn(baseStyles, variants[variant], sizes[size], className)}
-        {...props}
-      />
+      <button ref={ref} className={mergedClassName} {...props}>
+        {children}
+      </button>
     );
   }
 );

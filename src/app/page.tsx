@@ -9,8 +9,7 @@ import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { FaqGuaranteeSection } from "@/components/sections/FaqGuaranteeSection";
 import { FooterSection } from "@/components/sections/FooterSection";
-import { StickyCTA } from "@/components/ui/StickyCTA";
-import { ExitPopup } from "@/components/ui/ExitPopup";
+import { DeferredEnhancements } from "@/components/ui/DeferredEnhancements";
 
 export default function Home() {
   return (
@@ -27,8 +26,7 @@ export default function Home() {
       <FaqGuaranteeSection />
       <FooterSection />
 
-      <StickyCTA />
-      <ExitPopup />
+      <DeferredEnhancements />
 
       <script
         type="application/ld+json"

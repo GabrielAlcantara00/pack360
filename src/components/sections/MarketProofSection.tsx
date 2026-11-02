@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { assets } from "@/config/assets";
 
@@ -28,8 +29,7 @@ export function MarketProofSection() {
             <StaggerItem key={i}>
               <div className="bg-[var(--color-dark-charcoal)] border border-[var(--color-dark-border)] rounded-xl overflow-hidden h-full flex flex-col">
                 <div className="aspect-square w-full relative bg-[var(--color-dark-graphite)]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
+                  <Image src={item.img} alt={item.title} fill sizes="(max-width: 768px) 50vw, 25vw" quality={70} className="object-cover" />
                 </div>
                 <div className="p-3 md:p-4 flex-grow flex flex-col justify-between">
                   <div className="text-[10px] md:text-xs font-bold text-[var(--color-brand-orange)] uppercase mb-1">

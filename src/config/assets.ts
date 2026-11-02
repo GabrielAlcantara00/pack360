@@ -31,7 +31,7 @@ export const assets = {
     ],
   },
   guarantee: {
-    badge: "/placeholders/guarantee_badge.png",
+    badge: "/placeholders/guarantee_badge.webp",
   },
   plans: {
     paymentMethods: "/plans/Agrupar-1.webp",
