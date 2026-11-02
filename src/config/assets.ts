@@ -41,6 +41,6 @@ export const assets = {
 
 // Coloque os links reais da nova oferta antes de publicar.
 export const CHECKOUT_URLS = {
-  pro: "https://ggcheckout.app/checkout/v5/mE5or2yp85g1cvgOYLJD",
-  starter: "https://ggcheckout.app/checkout/v5/wdcLDT15r5lPiC0Nz2U1",
+  pro: "https://vopax.com.br/c/ecb21e65-905e-465c-9d5f-86716dc0c2bf",
+  starter: "https://vopax.com.br/c/d5a5461c-2879-4abe-819b-f469b57e792a",
 };
