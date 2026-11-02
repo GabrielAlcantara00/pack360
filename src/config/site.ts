@@ -7,13 +7,13 @@ export const siteConfig = {
     starter: {
       name: "STARTER",
       price: "12,90",
-      checkoutUrl: "https://ggcheckout.app/checkout/v5/wdcLDT15r5lPiC0Nz2U1",
+      checkoutUrl: "https://vopax.com.br/c/d5a5461c-2879-4abe-819b-f469b57e792a",
     },
     pro: {
       name: "PRO",
       price: "29,90",
       installments: "2x de R$ 14,95",
-      checkoutUrl: "https://ggcheckout.app/checkout/v5/mE5or2yp85g1cvgOYLJD",
+      checkoutUrl: "https://vopax.com.br/c/ecb21e65-905e-465c-9d5f-86716dc0c2bf",
     },
   },
 };
