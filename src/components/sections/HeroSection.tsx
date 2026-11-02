@@ -37,16 +37,16 @@ export function HeroSection() {
             </StaggerItem>
           </StaggerContainer>
 
-          <div className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end w-full relative self-center">
-            <div className="w-full max-w-[430px] mx-auto lg:max-w-xl relative z-10 rounded-2xl overflow-hidden border-4 border-[var(--color-dark-graphite)] shadow-2xl shadow-black/50 bg-[var(--color-dark-charcoal)]">
+          <div className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-3 flex justify-center lg:justify-end w-full relative self-center py-2 sm:py-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[78%] h-[68%] bg-[var(--color-brand-orange)]/20 blur-[95px] rounded-full pointer-events-none" />
+            <div className="w-full max-w-[430px] mx-auto lg:max-w-xl relative z-10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={assets.hero.image}
                 alt="Pack 360 Pro com biblioteca de artes 360 graus para copos"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
               />
             </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[var(--color-brand-orange)]/10 blur-[120px] rounded-full pointer-events-none" />
           </div>
 
           <StaggerContainer className="order-3 lg:col-start-1 lg:row-start-2 text-left max-w-[350px] mx-auto lg:mx-0">
