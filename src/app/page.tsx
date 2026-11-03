@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--color-dark-deep)] selection:bg-[var(--color-brand-orange)]/30 selection:text-white">
       <HeroSection />
-      <PainSection />
       <MarketProofSection />
+      <PainSection />
       <CategoriesSection />
       <RevealTourSection />
       <BonusSection />
